@@ -1,0 +1,406 @@
+.manage-leaves {
+  padding: 20px;
+}
+
+.manage-leaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.manage-leaves-header h2 {
+  margin: 0;
+  color: #2d3748;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-controls label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.filter-controls select {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+}
+
+.leaves-table-container {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.leaves-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaves-table thead {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  color: white;
+}
+
+.leaves-table th,
+.leaves-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #d8d2d2;
+  font-size: 14px;
+}
+
+.leaves-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leaves-table tbody tr {
+  border-bottom: 1px solid #d8d2d2;
+  transition: background-color 0.2s ease;
+}
+
+.leaves-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.employee-info {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.employee-code {
+  font-size: 13px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.reason-cell {
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+.approved-by-cell {
+  min-width: 120px;
+  text-align: center;
+}
+
+.approved-by-name {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #bbf7d0;
+}
+
+.approved-by-cell .no-approver {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #fef5e7;
+  color: #d69e2e;
+}
+
+.status-approved {
+  background: #c6f6d5;
+  color: #38a169;
+}
+
+.status-rejected {
+  background: #fed7d7;
+  color: #e53e3e;
+}
+
+.status-default {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.approve-btn,
+.reject-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.approve-btn {
+  background: #38a169;
+  color: white;
+}
+
+.approve-btn:hover {
+  background: #2f855a;
+}
+
+.reject-btn {
+  background: #e53e3e;
+  color: white;
+}
+
+.reject-btn:hover {
+  background: #c53030;
+}
+
+.update-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #2e7d32;
+  border: none;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.update-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.approved-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #718096;
+  font-style: italic;
+}
+
+.no-leaves {
+  text-align: center;
+  padding: 40px;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.manage-leaves-loading,
+.manage-leaves-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+}
+
+.manage-leaves-error {
+  color: #e53e3e;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f7fafc;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.modal-info {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 6px;
+  border-left: 4px solid #1b5e20;
+}
+
+.modal-info p {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #2d3748;
+}
+
+.modal-info strong {
+  color: #1a202c;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #2d3748;
+  background: white;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  background: #f7fafc;
+  justify-content: flex-end;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.cancel-btn:hover {
+  background: #cbd5e0;
+}
+
+.confirm-btn {
+  background: #1b5e20;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #2c5aa0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .manage-leaves-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .leaves-table-container {
+    overflow-x: scroll;
+  }
+
+  .leaves-table th,
+  .leaves-table td {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}

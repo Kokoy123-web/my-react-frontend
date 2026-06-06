@@ -1,0 +1,275 @@
+ .employee-table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.employee-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.3); /* Transparent white - image shows through */
+  backdrop-filter: blur(15px);
+}
+
+.employee-table-container thead {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  color: white;
+}
+
+.employee-table-container th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.employee-table-container tbody tr {
+  border-bottom: 1px solid #d8d2d2;
+  transition: background-color 0.2s ease;
+}
+
+.employee-table-container tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.employee-table-container td {
+  padding: 16px;
+  color: #333;
+  font-size: 14px;
+}
+
+.employee-table-container td:first-child {
+  color: green;
+  font-weight: bold;
+}
+
+.employee-table-container td:last-child {
+  display: flex;
+  gap: 8px;
+}
+
+.employee-table-container .icon-btn {
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+}
+
+.employee-table-container .icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.employee-table-container .payslip-btn {
+  background-color: transparent;
+}
+
+.employee-table-container .payslip-btn {
+  color: #22c55e;
+}
+
+.employee-table-container .payslip-btn:hover {
+  background-color: rgba(34, 197, 94, 0.1);
+  transform: scale(1.1);
+}
+
+.employee-table-container .edit-btn {
+  background-color: transparent;
+}
+
+.employee-table-container .edit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+.employee-table-container .delete-btn {
+  background-color: transparent;
+}
+
+.employee-table-container .delete-btn:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  transform: scale(1.1);
+}
+
+/* Modal Styles for Edit */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Edit Form Styles */
+.edit-employee-form {
+  padding: 24px;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.edit-employee-form .form-group {
+  margin-bottom: 20px;
+}
+
+.edit-employee-form .form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.edit-employee-form .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2937;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.edit-employee-form .form-group input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.edit-employee-form .form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.edit-employee-form .form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.edit-employee-form .cancel-btn {
+  background-color: white;
+  color: #374151;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-employee-form .cancel-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.edit-employee-form .submit-btn {
+  background-color: #22c55e;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+}
+
+.edit-employee-form .submit-btn:hover {
+  background-color: #16a34a;
+}
+
+

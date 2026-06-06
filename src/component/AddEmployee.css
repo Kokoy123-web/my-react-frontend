@@ -1,0 +1,99 @@
+.add-employee-form {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  max-width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.add-employee-form .form-group {
+  margin-bottom: 20px;
+}
+
+.add-employee-form .form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.add-employee-form .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2937;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.add-employee-form .form-group input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.add-employee-form .form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.add-employee-form .form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.add-employee-form .cancel-btn {
+  background-color: white;
+  color: #374151;
+  padding: 8px 16px;
+  width: 140px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-employee-form .cancel-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.add-employee-form .submit-btn {
+  background-color: #22c55e;
+  color: white;
+  padding: 8px 16px;
+  width: 140px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-employee-form .submit-btn:hover {
+  background-color: #16a34a;
+}
+
+.add-employee-form .submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #9ca3af;
+}
+
+.add-employee-form .submit-btn:disabled:hover {
+  background-color: #9ca3af;
+}
+

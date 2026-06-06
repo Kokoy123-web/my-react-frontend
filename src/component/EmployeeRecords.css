@@ -1,0 +1,219 @@
+.ed-records-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.ed-records-stat-card {
+  border-radius: 18px;
+  padding: 20px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.ed-records-stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.ed-stat-green {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 1px solid #6ee7b7;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.18);
+}
+
+.ed-stat-yellow {
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3bf 100%);
+  border: 1px solid #f9a825;
+  box-shadow: 0 4px 20px rgba(249, 168, 37, 0.16);
+}
+
+.ed-stat-blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 1px solid #93c5fd;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.14);
+}
+
+.ed-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ed-stat-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ed-stat-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.ed-stat-value.green { color: #059669; }
+.ed-stat-value.yellow { color: #f59e0b; }
+.ed-stat-value.blue { color: #2563eb; }
+
+.ed-stat-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.ed-stat-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.ed-stat-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.ed-stat-progress-track {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ed-stat-progress-fill.blue {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+}
+
+.ed-stat-progress-pct {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ed-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 18px;
+}
+
+.ed-tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ed-tab-btn.active {
+  color: #1bb31b;
+  font-weight: 700;
+  border-bottom-color: #1bb31b;
+}
+
+.ed-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .ed-records-stat-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ed-records-stat-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ed-payslip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.ed-download-btn,
+.ed-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  border: none;
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, opacity 0.15s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.ed-download-btn {
+  background: #1b5e20;
+}
+
+.ed-download-btn:hover:not(:disabled) {
+  background: #145218;
+  transform: translateY(-1px);
+}
+
+.ed-download-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.ed-print-btn {
+  background: #fff;
+  color: #1b5e20;
+  border: 1px solid #a5d6a7;
+}
+
+.ed-print-btn:hover {
+  background: #f0fdf4;
+  transform: translateY(-1px);
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .ed-table-wrap {
+    overflow-x: auto;
+  }
+  
+  .ed-table {
+    min-width: 600px;
+  }
+  
+  .ed-download-btn, .ed-print-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
