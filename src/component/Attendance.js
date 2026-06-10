@@ -15,7 +15,7 @@ function Attendance({ onAttendanceUpdate }) {
     }, []);
 
     const fetchAttendanceRecords = () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/attendance`)
+        axios.get(`${process.env.REACT_APP_API_URL}/attendance`);
             .then((res) => {
                 // Siguruha nga array ang nadawat
                 if (Array.isArray(res.data)) {
