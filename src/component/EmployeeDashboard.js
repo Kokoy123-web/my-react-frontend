@@ -376,7 +376,7 @@ function EmployeeDashboard({ onLogout }) {
   );
 
   const renderDashboard = () => {
-    // Prepare pie chart data for attendance status
+   
     const attendanceStatusData = [
       { status: "Present", count: attendance.filter(r => (r.status || "").toLowerCase().includes("present")).length },
       { status: "Late", count: attendance.filter(r => (r.status || "").toLowerCase().includes("late")).length },

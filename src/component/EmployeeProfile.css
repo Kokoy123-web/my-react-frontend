@@ -297,4 +297,18 @@
   .ep-form-card {
     padding: 18px 16px;
   }
+
+  .ep-title {
+    font-size: 1.25rem;
+  }
+
+  .ep-top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ep-profile-page {
+    padding: 0 4px;
+  }
 }

@@ -86,3 +86,23 @@
   background-color: rgba(220, 53, 69, 0.1);
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .payslip-header h1 {
+    font-size: 1.15rem;
+  }
+
+  .payslip-table-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .payslip-table-container table {
+    min-width: 560px;
+  }
+
+  .payslip-table-container th,
+  .payslip-table-container td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}

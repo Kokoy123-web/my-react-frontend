@@ -1,8 +1,11 @@
 .ed-root {
   display: flex;
   min-height: 100vh;
+  min-height: 100dvh;
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: linear-gradient(135deg, #f0f7f4 0%, #e8f5e8 25%, #d4edda 50%, #c3e6cb 75%, #b8dfc3 100%);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Main wrapper with flexbox */
@@ -151,16 +154,18 @@
 
 .ed-sidebar-logo-icon {
   width: 80px;
-  height: 90px;
+  height: 80px;
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ed-sidebar-logo-img {
-  width: 290px;
-  height: 290px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   border-radius: 9999px;
   transition: all 0.3s ease;
@@ -1081,12 +1086,19 @@
 @media (max-width: 768px) {
   .ed-top-navbar-hamburger {
     display: flex;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .ed-top-navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 0 12px;
+  }
+
+  .ed-top-navbar-title {
+    font-size: 16px;
   }
 
   .ed-sidebar-backdrop {
@@ -1108,6 +1120,7 @@
     width: min(280px, 88vw);
     margin-left: 0 !important;
     z-index: 1100;
+    height: 100dvh;
   }
 
   .ed-sidebar.mobile-open {
@@ -1117,10 +1130,17 @@
   .ed-main-container {
     margin-left: 0 !important;
     width: 100%;
+    min-width: 0;
   }
 
   .ed-main {
+    padding: 0;
+  }
+
+  .ed-page {
     padding: 12px;
+    min-height: auto;
+    background: transparent;
   }
 
   .ed-page-header {
@@ -1129,10 +1149,26 @@
     gap: 10px;
   }
 
+  .ed-page-header h1 {
+    font-size: 1.15rem;
+    word-break: break-word;
+  }
+
+  .ed-page-header p {
+    font-size: 0.78rem;
+  }
+
+  .ed-header-actions {
+    align-self: flex-end;
+  }
+
   .ed-top-navbar-logout {
     font-size: 0;
     padding: 8px 10px;
     gap: 0;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
   }
 
   .ed-top-navbar-logout svg {
@@ -1142,6 +1178,45 @@
 
   .ed-summary-row {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .ed-content-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ed-content-right {
+    flex: 1;
+    width: 100%;
+  }
+
+  .ed-table-wrap {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ed-table {
+    min-width: 480px;
+  }
+
+  .ed-table th,
+  .ed-table td {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  .ed-card-payslip-amount {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+
+  .ed-quick-actions {
+    gap: 8px;
+  }
+
+  .ed-sidebar-profile-name,
+  .ed-sidebar-profile-pos {
+    max-width: 180px;
   }
 }
 

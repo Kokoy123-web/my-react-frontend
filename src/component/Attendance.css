@@ -202,8 +202,15 @@
     grid-template-columns: 1fr;
   }
 
+  .attendance-table-wrap,
+  .attendance-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .attendance-table {
     font-size: 12px;
+    min-width: 560px;
   }
 
   .attendance-table th,

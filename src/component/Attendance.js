@@ -7,7 +7,7 @@ function Attendance({ onAttendanceUpdate }) {
     const [attendanceRecords, setAttendanceRecords] = useState([]);
     const [confirm, setConfirm] = useState({ show: false, message: "", onConfirm: null });
 
-    // 1. Auto-refresh matag 5 segundos para updated ang dashboard
+   
     useEffect(() => {
         fetchAttendanceRecords();
         const interval = setInterval(fetchAttendanceRecords, 5000);
@@ -15,15 +15,15 @@ function Attendance({ onAttendanceUpdate }) {
     }, []);
 
     const fetchAttendanceRecords = () => {
-        axios.get(`${process.env.REACT_APP_API_URL}/attendance`);
+        axios.get(`${process.env.REACT_APP_API_URL}/attendance`)
             .then((res) => {
-                // Siguruha nga array ang nadawat
+              
                 if (Array.isArray(res.data)) {
                     setAttendanceRecords(res.data);
                 }
             })
             .catch(() => {
-                // Hilom lang kung naay error para dili samok sa dashboard
+               
             });
     };
 

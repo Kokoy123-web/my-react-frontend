@@ -384,21 +384,70 @@
 /* Responsive */
 @media (max-width: 991.98px) {
   .login-left {
-    min-height: 320px;
+    min-height: 280px;
+    padding: 1.5rem 1rem;
   }
 
   .login-right {
     min-height: auto;
-    padding: 2rem 1.25rem 2.5rem;
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .login-left-inner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
 @media (max-width: 575.98px) {
+  .login-left {
+    min-height: auto;
+    padding: 1.25rem 1rem;
+  }
+
+  .login-feature-list {
+    display: none;
+  }
+
+  .login-left-title {
+    font-size: 1.25rem;
+  }
+
+  .login-left-desc {
+    font-size: 0.82rem;
+  }
+
+  .login-brand-ring {
+    width: 72px;
+    height: 72px;
+  }
+
+  .login-brand-icon {
+    font-size: 1.85rem;
+  }
+
+  .login-right {
+    padding: 1.25rem 0.75rem 2rem;
+  }
+
+  .login-card {
+    max-width: 100%;
+    border-radius: 12px !important;
+  }
+
   .login-card-body {
     padding: 1.25rem 1.25rem 1rem;
   }
 
   .login-role-btn span {
+    font-size: 0.72rem;
+  }
+
+  .login-welcome-title {
+    font-size: 1.2rem;
+  }
+
+  .remember-me span {
     font-size: 0.75rem;
   }
 }

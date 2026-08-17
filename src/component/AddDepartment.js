@@ -25,7 +25,7 @@ function AddDepartment({ onSuccess, onCancel }) {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    // Validation
+   
     if (!form.department_name.trim() || !form.description.trim()) {
       showAlert("Please fill in all required fields", "warning");
       return;

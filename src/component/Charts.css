@@ -164,7 +164,7 @@
 /* Charts Grid Layout */
 .charts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 24px;
   padding: 0 30px 30px 30px;
 }
@@ -176,16 +176,37 @@
 @media (max-width: 768px) {
   .charts-grid {
     grid-template-columns: 1fr;
-    padding: 0 20px 20px 20px;
+    padding: 0 0 16px;
+    gap: 12px;
   }
 
   .chart-container {
-    padding: 16px;
+    padding: 14px;
+    margin-bottom: 0;
+  }
+
+  .chart-container h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 
   .bar-chart,
   .line-chart {
     min-width: 100%;
+  }
+
+  .timeline-item {
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-content {
+    padding: 12px 14px;
+  }
+
+  .pie-chart {
+    width: 160px;
+    height: 160px;
   }
 }
 

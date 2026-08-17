@@ -304,6 +304,12 @@
 @media (max-width: 768px) {
   .department-table-container {
     font-size: 12px;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  .department-table-container table {
+    min-width: 480px;
   }
 
   .department-table-container th,
@@ -312,6 +318,7 @@
   }
 
   .department-table-container td:last-child {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

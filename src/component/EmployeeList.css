@@ -272,4 +272,35 @@
   background-color: #16a34a;
 }
 
+@media (max-width: 768px) {
+  .employee-table-container {
+    -webkit-overflow-scrolling: touch;
+  }
 
+  .employee-table-container table {
+    min-width: 640px;
+  }
+
+  .employee-table-container th,
+  .employee-table-container td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .employee-table-container td:last-child {
+    min-width: 120px;
+  }
+
+  .edit-employee-form {
+    padding: 16px;
+  }
+
+  .edit-employee-form .form-buttons {
+    flex-direction: column;
+  }
+
+  .edit-employee-form .cancel-btn,
+  .edit-employee-form .submit-btn {
+    width: 100%;
+  }
+}

@@ -97,3 +97,17 @@
   background-color: #9ca3af;
 }
 
+@media (max-width: 768px) {
+  .add-employee-form {
+    padding: 16px;
+  }
+
+  .add-employee-form .form-buttons {
+    flex-direction: column;
+  }
+
+  .add-employee-form .cancel-btn,
+  .add-employee-form .submit-btn {
+    width: 100%;
+  }
+}

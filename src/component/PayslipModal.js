@@ -33,11 +33,28 @@ function PayslipModal({ show, onClose, employeeId, employees = [], onSuccess, pa
     }
   }, [payslip]);
 
+  const computedNetAmount = (() => {
+    const gross = parseFloat(form.gross_amount);
+    const deductions = parseFloat(form.deductions);
+
+    if (Number.isNaN(gross) || Number.isNaN(deductions)) {
+      return "";
+    }
+
+    return (gross - deductions).toFixed(2);
+  })();
+
   const isValid =
     form.employee_id &&
     form.pay_period.trim() !== "" &&
-    form.gross_amount !== "" &&
-    form.net_amount !== "";
+    form.gross_amount !== "";
+
+  useEffect(() => {
+    setForm((prev) => {
+      if (prev.net_amount === computedNetAmount) return prev;
+      return { ...prev, net_amount: computedNetAmount };
+    });
+  }, [computedNetAmount]);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -127,10 +144,13 @@ function PayslipModal({ show, onClose, employeeId, employees = [], onSuccess, pa
             <input
               type="number"
               name="net_amount"
-              value={form.net_amount}
-              onChange={handleChange}
+              value={form.net_amount || computedNetAmount}
+              readOnly
               required
             />
+            <small style={{ color: "#64748b", display: "block", marginTop: "0.25rem" }}>
+              Auto-computed as Gross Amount − Deductions.
+            </small>
           </div>
           <div className="form-buttons">
             <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
